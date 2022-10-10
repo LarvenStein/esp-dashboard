@@ -1,0 +1,9 @@
+[
+    {
+        "Name": "Testlicht",
+        "IP": "192.168.17.121",
+        "Type": "light",
+        "Password": "R0JaZ2J6OTkj",
+        "Module": "Relay"
+    }
+]

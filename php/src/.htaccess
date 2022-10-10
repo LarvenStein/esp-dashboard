@@ -1,0 +1,8 @@
+<Files "settings.json">
+    Order allow,deny
+    Deny from all
+</Files>
+<Files "accsess.php">
+    Order allow,deny
+    Deny from all
+</Files>
