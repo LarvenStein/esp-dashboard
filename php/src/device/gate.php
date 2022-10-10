@@ -9,6 +9,29 @@
     <script src="opengate.js" defer></script>
 </head>
 <body>
+<?php
+        require_once('../accsess.php');
+
+        if(isset($_COOKIE['pw'])) {
+            $password = base64_decode($_COOKIE['pw']);
+        } elseif(isset($_POST['pw'])) {
+            $password = $_POST['pw'];
+        } else {
+            $password = null;
+        }
+        if($password == getUserPassword()) {
+            setcookie('pw', base64_encode($password), time() + (86400 * 365), "/");
+        } else {
+            die('
+            <form method="post" class="newDevice allcenter">
+            <h1>Bitte Einloggen!</h1>
+            <input type="password" name="pw" placeholder="Passwort" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+            ');
+        }
+    ?>
     <header>
         <a href="/"><img src="https://www.gartenbauzentrale.de/files/gbz/img/logo.svg"></a>
     </header>

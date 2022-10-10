@@ -59,7 +59,7 @@
                     </div>
                     ';
                 } else {
-
+                    $current_Devices = json_decode(file_get_contents('../settings.json'));
                 echo '
                 <div class="center">
                 <div class="newDevice">
@@ -92,6 +92,25 @@
                             <button type="submit">Gerät Hinzufügen</button>
                         </form>
                     </div>
+                </div>
+                <br>
+                <div class="newDevice">
+                <h3>Gerät Löschen</h3>
+                <div class="setting">
+                    <form method="post">
+                        <input name="username" value="'.$_POST['username'].'" hidden>
+                        <input name="password" value="'.$_POST['password'].'" hidden>
+
+                        <label for="device2delete">Zu löschenes Gerät</label><br>
+                        <select name="device2delete">';
+                        foreach($current_Devices as $index=>$curdev) {
+                            echo '<option value="'.$index.'">'.$curdev->Name.' ('.$curdev->IP.')</option>';
+                        }
+                        echo '
+                        </select>
+                        <br><br>
+                        <button type="submit">Gerät Löschen</button>
+                    </form>
                 </div>
                 
                 

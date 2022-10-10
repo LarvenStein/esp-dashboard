@@ -1,4 +1,19 @@
 <?php
+    require_once('accsess.php');
+
+    if(isset($_COOKIE['pw'])) {
+        $password = base64_decode($_COOKIE['pw']);
+    } elseif(isset($_POST['pw'])) {
+        $password = $_POST['pw'];
+    } else {
+        $password = null;
+    }
+    if($password == getUserPassword()) {
+        setcookie('pw', base64_encode($password), time() + (86400 * 365), "/");
+    } else {
+        die('uauthorized');
+    }
+
 header('Content-Type: application/json; charset=utf-8');
 
 $device_data = json_decode(file_get_contents('settings.json'));
