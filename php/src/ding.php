@@ -50,6 +50,7 @@
 <body>
 <div class="temp">
 <?php
+error_reporting(0);
 
 $baseinfo = json_decode(file_get_contents('http://192.168.99.121/cm?cmnd=STATUS+8'));
 
