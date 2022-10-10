@@ -4,3 +4,7 @@
 2. `cd esp-dashboard/`
 3. `chmod 777 php/src/settings.json`
 4. `docker-compose up (-d)`
+
+--
+
+Standardport: *8000*
