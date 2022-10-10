@@ -4,6 +4,7 @@ body {
     color: var(--white);
     font-family: Ubuntu;
     transition: all 1s;
+    margin-bottom: 15px;
 }
 
 header {
