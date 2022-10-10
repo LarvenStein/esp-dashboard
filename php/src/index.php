@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php
+    error_reporting(0);
         require_once('accsess.php');
 
         if(isset($_COOKIE['pw'])) {
