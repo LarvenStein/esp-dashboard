@@ -1,0 +1,1 @@
+**Den Zugriff auf "settings.json" und "accsess.php" via Webserver verbieten!**
