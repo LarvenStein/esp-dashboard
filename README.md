@@ -2,7 +2,7 @@
 
 1. `git clone https://git.gartenbauzentrale.de/GartenbauzentraleEG/ESP-Dashboard.git`
 2. `cd esp-dashboard/`
-3. 
+3. `nano php/src/accsess.php` und dort Zuganngsdaten bearbeiten
 4. `docker-compose up (-d)`
 
 --
