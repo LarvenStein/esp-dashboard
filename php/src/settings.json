@@ -1,0 +1,9 @@
+[
+    {
+        "Name": "Beispielgerät",
+        "IP": "1.1.1.1",
+        "Type": "light",
+        "Password": "pw",
+        "Module": ""
+    }
+]
