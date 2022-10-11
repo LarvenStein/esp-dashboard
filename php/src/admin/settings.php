@@ -58,8 +58,30 @@
                         </div>
                     </div>
                     ';
-                } else {
+                } elseif(isset($_POST['device2delete'])) { 
+                    $current_Devices = json_decode(file_get_contents('../settings.json'));
+                    echo '
+                    <div class="center">
+                        <div class="newDevice">
+                        <div class="center">
+                        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm7 7.457l-9.005 9.565-4.995-5.865.761-.649 4.271 5.016 8.24-8.752.728.685z"/></svg>
+                        </div>
+                        <h3>Das Gerät "'.$current_Devices[$_POST['device2delete']]->Name.'" wurde gelöscht.</h3>
+                        <br><br>
+                        <form method="post">
+                        <input name="username" value="'.$_POST['username'].'" hidden>
+                        <input name="password" value="'.$_POST['password'].'" hidden>
+                        <input type="Submit" value="Zurück">
+                        </form>
+                        </div>
+                        </div>
+                    </div>
+                    ';
 
+                    unset($current_Devices[$_POST['device2delete']]);
+                    file_put_contents('../settings.json', json_encode($current_Devices, JSON_PRETTY_PRINT));
+                }else {
+                    $current_Devices = json_decode(file_get_contents('../settings.json'));
                 echo '
                 <div class="center">
                 <div class="newDevice">
@@ -92,6 +114,25 @@
                             <button type="submit">Gerät Hinzufügen</button>
                         </form>
                     </div>
+                </div>
+                <br>
+                <div class="newDevice">
+                <h3>Gerät Löschen</h3>
+                <div class="setting">
+                    <form method="post">
+                        <input name="username" value="'.$_POST['username'].'" hidden>
+                        <input name="password" value="'.$_POST['password'].'" hidden>
+
+                        <label for="device2delete">Zu löschenes Gerät</label><br>
+                        <select name="device2delete">';
+                        foreach($current_Devices as $index=>$curdev) {
+                            echo '<option value="'.$index.'">'.$curdev->Name.' ('.$curdev->IP.')</option>';
+                        }
+                        echo '
+                        </select>
+                        <br><br>
+                        <button type="submit">Gerät Löschen</button>
+                    </form>
                 </div>
                 
                 
