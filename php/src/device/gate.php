@@ -11,6 +11,7 @@
 <body>
 <?php
 error_reporting(0);
+
         require_once('../accsess.php');
 
         if(isset($_COOKIE['pw'])) {
@@ -24,7 +25,7 @@ error_reporting(0);
             setcookie('pw', base64_encode($password), time() + (86400 * 365), "/");
         } else {
             die('
-            <form method="post" class="newDevice allcenter">
+            <form method="post" class="newDevice absolutecenter">
             <h1>Bitte Einloggen!</h1>
             <input type="password" name="pw" placeholder="Passwort" required>
             <br>

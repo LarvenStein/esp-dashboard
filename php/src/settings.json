@@ -1,9 +1,9 @@
 [
     {
-        "Name": "Ein Licht",
-        "IP": "192.168.17.121",
+        "Name": "Beispielgerät",
+        "IP": "1.1.1.1",
         "Type": "light",
-        "Password": "R0JaZ2J6OTkj",
+        "Password": "pw",
         "Module": ""
     }
 ]

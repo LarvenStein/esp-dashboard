@@ -10,6 +10,7 @@
 </head>
 <?php
 error_reporting(0);
+
         require_once('../accsess.php');
 
         if(isset($_COOKIE['pw'])) {
@@ -49,7 +50,7 @@ echo '
                 // Hier Code zum Abrufen des Status einfügen
                 
                 echo '
-                <div class="allcenter devicepanel" id="btn">
+                <div class="absolutecenter devicepanel" id="btn">
                 <div>
                     <h1>'.$device->Name.'</h1>
                     <button class="" onclick="togglegate(&#39;'.$_GET['device'].'&#39;)">Toggle</button>

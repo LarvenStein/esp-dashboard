@@ -20,10 +20,11 @@
             $password = null;
         }
         if($password == getUserPassword()) {
+            echo 'richtiges pw';
             setcookie('pw', base64_encode($password), time() + (86400 * 365), "/");
         } else {
             die('
-            <form method="post" class="newDevice allcenter">
+            <form method="post" class="newDevice absolutecenter">
             <h1>Bitte Einloggen!</h1>
             <input type="password" name="pw" placeholder="Passwort" required>
             <br>
