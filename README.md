@@ -26,4 +26,4 @@ Standardport: *8000*
 
 Bei problemen bei erstellen von geräten, chmod 777 settings.json ausführen.
 
-Standardport: 80
+Standardport: *80*
