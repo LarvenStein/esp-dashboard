@@ -23,7 +23,6 @@
                     $Devices = [];
                     if(file_exists('../settings.json')) {
                         $Devices = json_decode(file_get_contents('../settings.json'), true);
-                        print_r($Devices);
                     }
                     $newDevice = [
                         'Name' => $_POST['DeviceName'],

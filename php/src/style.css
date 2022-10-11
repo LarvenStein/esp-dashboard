@@ -245,6 +245,10 @@ label {
     color: var(--white);
 }
 
+::selection {
+    background-color: var(--red);
+}
+
 :root {
     --red: #c74328;
     --black: #383837;
