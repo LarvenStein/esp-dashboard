@@ -21,3 +21,9 @@ Standardport: *8000*
 5. `cd /var/www/html/` *In das Webserver verzeichniss wechseln*
 6. Die `esp-dashboard.zip` datei des neusten SOURCE release runterladen
 7. `unzip esp-dashboard.zip` *Das Dashboard entpacken*
+
+--
+
+Bei problemen bei erstellen von geräten, chmod 777 settings.json ausführen.
+
+Standardport: 80
