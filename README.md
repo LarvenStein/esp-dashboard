@@ -6,6 +6,7 @@
 4. `docker-compose up (-d)`
 
 --
+
 Bei problemen bei erstellen von geräten, `chmod 777 php/src/settings.json` ausführen.
 
 Standardport: *8000*
