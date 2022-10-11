@@ -20,8 +20,9 @@
             $password = null;
         }
         if($password == getUserPassword()) {
-            echo 'richtiges pw';
-            setcookie('pw', base64_encode($password), time() + (86400 * 365), "/");
+            echo '<script>
+                document.cookie = "pw='.base64_encode($password).'; max-age=max-age-in-seconds=31536000";
+            </script>';
         } else {
             die('
             <form method="post" class="newDevice absolutecenter">
