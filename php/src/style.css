@@ -245,6 +245,22 @@ label {
     color: var(--white);
 }
 
+.sucsess {
+    animation: success 3s;
+}
+
+@keyframes success {
+    0% {
+        background-color: var(--red);
+    }
+    50% {
+        background-color: var(--green);
+    }
+    100% {
+        background-color: var(--red);
+    }
+}
+
 ::selection {
     background-color: var(--red);
 }
@@ -254,6 +270,7 @@ label {
     --black: #383837;
     --white: #eaeaea;
     --gray: #5e5e5d;
+    --green : #5dc728;
 }
 
 @font-face {

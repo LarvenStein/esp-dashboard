@@ -1,9 +1,23 @@
 [
     {
-        "Name": "Beispielgerät",
+        "Name": "Beispielger\u00e4t",
         "IP": "1.1.1.1",
         "Type": "light",
         "Password": "pw",
         "Module": ""
+    },
+    {
+        "Name": "Relay1",
+        "IP": "192.168.17.121",
+        "Type": "gate",
+        "Password": "R0JaZ2J6OTkj",
+        "RelayId": "1"
+    },
+    {
+        "Name": "Relay2",
+        "IP": "192.168.17.121",
+        "Type": "gate",
+        "Password": "R0JaZ2J6OTkj",
+        "RelayId": "2"
     }
 ]

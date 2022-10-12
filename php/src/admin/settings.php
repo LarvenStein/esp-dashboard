@@ -29,7 +29,7 @@
                         'IP' => $_POST['IP'],
                         'Type' => $_POST['type'],
                         'Password' => base64_encode($_POST['DevicePassword']),
-                        'Module' => $_POST['module']
+                        'RelayId' => $_POST['relay-id']
                     ];
                     array_push($Devices, $newDevice);
                     file_put_contents('../settings.json', json_encode($Devices, JSON_PRETTY_PRINT));
@@ -46,7 +46,7 @@
                         '.$_POST['IP'].',
                         '.$_POST['type'].',
                         '.base64_encode($_POST['DevicePassword']).' <i>(Base64 enkodiert)</i>,
-                        '.$_POST['module'].'
+                        '.$_POST['relay-id'].'
                         <br><br>
                         <form method="post">
                         <input name="username" value="'.$_POST['username'].'" hidden>
@@ -99,16 +99,15 @@
                             <label for="type">Gerätetyp</label><br>
                             <select name="type" style="width: 277px;">
                                 <option>Auswählen</option>
-                                <option value="gate">Tor</option>
+                                <option value="gate">Tor / Schranke</option>
                                 <option value="light">Licht</option>
-                                <option value="Air">Luftsensor</option>
                             </select>
                             <br><br>
                             <label for="DevicePassword">Geräte Passwort</label><br>
                             <input type="text" name="DevicePassword">
                             <br><br>
-                            <label for="module">Modulname</label><br>
-                            <input type="text" name="module" placeholer="z.b. DHT11">
+                            <label for="relay-id">Relay Nummer <a href="https://i.imgur.com/uTUvJ83.png" target="_blank">?</a><br> (Nur bei Multi-Relay ESPs eingeben)</label><br>
+                            <input type="text" name="relay-id" placeholer="Klicke für Beispiel"> 
                             <br><br>
                             <button type="submit">Gerät Hinzufügen</button>
                         </form>

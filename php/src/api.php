@@ -23,12 +23,14 @@ $device = $device_data[$_GET['device']];
 
 
 if(strlen($_GET['action'] > 0)) {
-
-
     // Wenn Etwas umgeschaltet (getogglet) werden soll: z.b. Eine Garage 
     if($_GET['action'] == 'toggle') {
 
-    $ch = curl_init('http://' . $device->IP . '/cm?cmnd=POWER+TOGGLE');
+    if(strlen($device->RelayId > 0)){
+        $ch = curl_init('http://' . $device->IP . '/cm?cmnd=POWER'.$device->RelayId.'+TOGGLE');
+    } else {
+        $ch = curl_init('http://' . $device->IP . '/cm?cmnd=POWER+TOGGLE');
+    }
     //HTTP username.
     $username = 'admin';
     //HTTP password.

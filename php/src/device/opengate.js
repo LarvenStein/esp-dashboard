@@ -18,6 +18,15 @@ function togglegate(vv) {
         }
 
     };
+
+    document.getElementById('gatebox').classList.add('sucsess');
+    
+    setTimeout(rmsucsess, 4000);
+
+    function rmsucsess() {
+        document.getElementById('gatebox').classList.remove('sucsess');
+    }
+
     if(document.getElementById('main').classList.contains('light')) {
         document.getElementById('main').classList.remove('light');
         document.getElementById('btn').classList.remove('light');
