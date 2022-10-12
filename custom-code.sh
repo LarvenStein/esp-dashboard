@@ -11,15 +11,15 @@ case $yn in
 esac
 
 read -p "füge den link zu deiner .git repository ein" repo
-
+echo "$PWD"
 mkdir ../temp/
 cp php/src/settings.json ../temp/
 cp php/src/accsess.php ../temp/
 
 rm -r ESP-Dashboard/*
-
+echo "$PWD"
 cd ../
-
+echo "$PWD"
 git clone $repo ESP-Dashboard/
 rm ESP-Dashboard/php/src/settings.json
 rm ESP-Dashboard/php/src/accsess.php
