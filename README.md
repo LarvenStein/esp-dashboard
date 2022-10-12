@@ -27,3 +27,6 @@ Standardport: *8080*
 Bei problemen bei erstellen von geräten, `chmod 777 settings.json` ausführen.
 
 Standardport: *80*
+
+## Funktionsweise
+![Funktionsweise](https://user-images.githubusercontent.com/89642388/195313967-d10e39c2-53c1-417e-af22-2941784d27ca.svg)
