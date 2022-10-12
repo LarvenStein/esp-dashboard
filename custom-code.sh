@@ -16,14 +16,14 @@ mkdir ../temp/
 cp php/src/settings.json ../temp/
 cp php/src/accsess.php ../temp/
 
-rm -r ESP-Dashboard/
+rm -r ESP-Dashboard/*
 
 cd ../
 
 git clone $repo ESP-Dashboard/
-rm php/src/settings.json
-rm php/src/accsess.php
-cp ../temp/settings.json php/src/
-cp ../temp/accsess.php php/src/
+rm ESP-Dashboard/php/src/settings.json
+rm ESP-Dashboard/php/src/accsess.php
+cp temp/settings.json php/src/
+cp temp/accsess.php php/src/
 
 echo "Fertig"
