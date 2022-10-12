@@ -18,7 +18,7 @@ cp php/src/accsess.php ../temp/
 
 rm -r *
 
-git clone $repo .
+git clone $repo $PWD
 rm php/src/settings.json
 rm php/src/accsess.php
 cp ../temp/settings.json php/src/
