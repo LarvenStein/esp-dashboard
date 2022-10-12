@@ -3,8 +3,8 @@
 read -p "Dies wird alles aus dem Conatiner Löschen! Ausgenommen settings.json und accsess.php. Möchtest du forfahren? (y/n) " yn
 
 case $yn in 
-	yY ) echo ok, we will proceed;;
-	nN ) echo exiting...;
+	y ) echo ok, we will proceed;;
+	n ) echo exiting...;
 		exit;;
 	* ) echo invalid response;
 		exit 1;;
@@ -18,7 +18,7 @@ cp php/src/accsess.php ../temp/
 
 rm -r *
 
-git clone $repo 
+git clone $repo .
 rm php/src/settings.json
 rm php/src/accsess.php
 cp ../temp/settings.json php/src/
