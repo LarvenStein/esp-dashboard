@@ -10,20 +10,17 @@ case $yn in
 		exit 1;;
 esac
 
-read -p "füge den link zu deiner .git repository ein (mit http://)" repo
-echo "$PWD"
+read -p "füge den link zu deiner .git repository ein (mit http://): " repo
 mkdir ../temp/
 cp php/src/settings.json ../temp/
 cp php/src/accsess.php ../temp/
 
-echo "$PWD"
 cd ../
-rm -r ESP-Dashboard/
-echo "$PWD"
+rm -r ESP-Dashboard/ -y
 git clone $repo ESP-Dashboard/
 rm ESP-Dashboard/php/src/settings.json
 rm ESP-Dashboard/php/src/accsess.php
-cp temp/settings.json php/src/
-cp temp/accsess.php php/src/
+cp temp/settings.json ESP-Dashboard/php/src/
+cp temp/accsess.php ESP-Dashboard/php/src/
 
 echo "Fertig"
