@@ -12,18 +12,27 @@
     error_reporting(0);
         require_once('accsess.php');
 
+        // Passwortprüfung
+
         if(isset($_COOKIE['pw'])) {
+            // Wenn das passwort schon in Cookies gespeichert ist:
             $password = base64_decode($_COOKIE['pw']);
         } elseif(isset($_POST['pw'])) {
+            // Wenn das Passwort über das formular und POST gesendet wurde
             $password = $_POST['pw'];
         } else {
+            // wenn keine Passworteingabe vorhanden ist
             $password = null;
         }
+        // Ist das Passwort Richtig?
         if($password == getUserPassword()) {
+            // Richtiges Passwort: In Base64 enkodieren und in Cookies speichern 
             echo '<script>
                 document.cookie = "pw='.base64_encode($password).'; max-age=max-age-in-seconds=31536000";
             </script>';
         } else {
+            // Wenn das Passwort falsch ist, stoppe alle Prozesse und zeige das Anmeldeformular
+
             die('
             <form method="post" class="newDevice absolutecenter">
             <h1>Bitte Einloggen!</h1>
@@ -34,6 +43,7 @@
             ');
         }
     ?>
+    <!--Der HTML Header mit Gemüse und GBZ Logo-->
     <header>
     <a href="/"><img src="https://www.gartenbauzentrale.de/files/gbz/img/logo.svg"></a>
     </header>
@@ -41,8 +51,10 @@
     <h1>Geräte</h1>
     <main class="home">
         <?php
+        // Hole liste aller Gräte und Dekodiere das JSON Arraay in ein PHP Array
             $devices = json_decode(file_get_contents('settings.json'));
 
+            // Für jedes Gerätauf der Liste, zeige das an
             foreach($devices as $index=>$device) {
                 echo '
                 <a class="device" href="device/'.$device->Type.'.php?device='.$index.'">

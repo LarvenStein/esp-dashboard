@@ -15,15 +15,19 @@
         <?php
             require_once ('../accsess.php');
 
+            // Überprüfe ob die Admin zugangsdaten richtig sind
             if($_POST['username'] == getAdminUser() && $_POST['password'] == getAdminPassword()) {
                 echo '<h1>Admin Einstellungen</h1>';
                 echo '<h2>Willkommen, ' . getAdminUser() . '</h2>';
 
+                //Überprüfe ob eine Anfrage zum Gerät erstellen gestellt wurde
                 if(isset($_POST['DeviceName']) && isset($_POST['IP']) && isset($_POST['type']) && isset($_POST['DevicePassword'])) {
+                    // Wenn ja, hole liste der bestehenden geräte
                     $Devices = [];
                     if(file_exists('../settings.json')) {
                         $Devices = json_decode(file_get_contents('../settings.json'), true);
                     }
+                    // Erstelle ein Array für das neue Gerät
                     $newDevice = [
                         'Name' => $_POST['DeviceName'],
                         'IP' => $_POST['IP'],
@@ -31,9 +35,12 @@
                         'Password' => base64_encode($_POST['DevicePassword']),
                         'RelayId' => $_POST['relay-id']
                     ];
+                    //Füge beide Arrays zusammen
                     array_push($Devices, $newDevice);
+                    // speichere die Änderungen
                     file_put_contents('../settings.json', json_encode($Devices, JSON_PRETTY_PRINT));
 
+                    // Und gebe einen Bestätingungsbildschirm aus
                     echo '
                     <div class="center">
                         <div class="newDevice">
@@ -57,8 +64,11 @@
                         </div>
                     </div>
                     ';
-                } elseif(isset($_POST['device2delete'])) { 
+                } elseif(isset($_POST['device2delete'])) {
+                    // Wenn ein Gerät gelöscht werden soll:
+                    // Hole die Liste von Geräten 
                     $current_Devices = json_decode(file_get_contents('../settings.json'));
+                    // Gebe einen Bestätingungsbildschirm aus
                     echo '
                     <div class="center">
                         <div class="newDevice">
@@ -76,9 +86,13 @@
                         </div>
                     </div>
                     ';
-
+                    //Lösche das gerät aus dem Array
                     unset($current_Devices[$_POST['device2delete']]);
+                    //und speichere die Änderungen
                     file_put_contents('../settings.json', json_encode($current_Devices, JSON_PRETTY_PRINT));
+
+                    //Aber warum wird die Aktion bestätigt bevor sie ausgeführt wird?
+                    //Wenn das gerät vorher gelöscht wird, kann ich die daten auf den Bildschirn bicht anzeigen. Deshalb.
                 }else {
                     $current_Devices = json_decode(file_get_contents('../settings.json'));
                 echo '
@@ -123,6 +137,7 @@
 
                         <label for="device2delete">Zu löschenes Gerät</label><br>
                         <select name="device2delete">';
+                        // Hier werden alle Geräte angezeigt, die man Löschen kann
                         foreach($current_Devices as $index=>$curdev) {
                             echo '<option value="'.$index.'">'.$curdev->Name.' ('.$curdev->IP.')</option>';
                         }
@@ -138,6 +153,7 @@
                 ';
                 }
             } else {
+                // Beende bei einem Falschen Passowrt alle Aktionen und zeige das an:
                 die ('<h1>Falschs Passwort</h1><br>
                 <a href="index.php" class="center">Zurück</a>
                 ');

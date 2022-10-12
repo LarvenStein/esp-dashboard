@@ -13,6 +13,7 @@
     </header>
     <main>
         <h1>Admin Login</h1>
+        <!--Hier werden nur Admin-Login sachen abgefragt. Das ist nur HTML-->
         <form method="post" action="settings.php">
             <input type="user" name="username" placeholder="Nutzername" required>
             <br>

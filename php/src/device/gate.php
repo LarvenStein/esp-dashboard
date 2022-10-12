@@ -43,13 +43,13 @@ error_reporting(0);
             $device = $device_data[$_GET['device']];
 
             if($device->Type == 'gate') {
-                // Hier Code zum Abrufen des Status einfügen
+                // Das heir funktioniert gleich wie light.php: nur ohne die lich an/aus sache
                 
                 echo '
                 <div class="allcenter devicepanel">
                 <div>
                     <h1>'.$device->Name.'</h1>
-                    <button onclick="togglegate(&#39;'.$_GET['device'].'&#39;)" id="gatebox">Toggle</button>
+                    <button onclick="togglegate(&#39;'.$_GET['device'].'&#39;)" id="gatebox">AUF</button>
                     <p id="status" class="hidden"></p>
                 </div>
                 </div>

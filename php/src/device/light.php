@@ -46,25 +46,27 @@ echo '
             $device_data = json_decode(file_get_contents('../settings.json'));
             $device = $device_data[$_GET['device']];
 
+            // Prüfe, ob das angeforderte Gerät ein licht ist
             if($device->Type == 'light') {
-                // Hier Code zum Abrufen des Status einfügen
-                
+                // Das Interface zum ein/aus schalten des Lichts                
                 echo '
                 <div class="allcenter devicepanel" id="btn">
                 <div>
                     <h1>'.$device->Name.'</h1>
-                    <button class="" onclick="togglegate(&#39;'.$_GET['device'].'&#39;)">Toggle</button>
-                    <p id="status" class="hidden"></p>
+                    <button class="" onclick="togglegate(&#39;'.$_GET['device'].'&#39;)">Toggle</button> <!--Wenn der Butten angeklickt wird, führe diese JS funktion aus-->
+                    <p id="status" class="hidden"></p> <!--Falls es fehler bei der Anfrage gibt, zeige diese Hier-->
                 </div>
                 </div>
                 ';
 
             } else {
+
+                // Wenn das Angeforderte Gerät kein Licht ist, gebe eine Fehlermeldung aus
                 echo '
                 <div class="allcenter devicepanel">
                 <div>
                 <h1>Hier ist etwas schief gelaufen!</h1>
-                <a href="'.$device->Type.'.php?device='.$_GET['device'].'">Zum richtigen Gerät >></a>
+                <a href="'.$device->Type.'.php?device='.$_GET['device'].'">Zum richtigen Gerät >></a> <!--Hier ist dann ein Link, welcher zum richtigen gerät führn sollte.-->
                 </div>
                 </div>';
                 http_response_code(404);
