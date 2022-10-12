@@ -16,9 +16,11 @@ mkdir ../temp/
 cp php/src/settings.json ../temp/
 cp php/src/accsess.php ../temp/
 
-rm -r *
+rm -r ESP-Dashboard/
 
-git clone $repo $PWD
+cd ../
+
+git clone $repo ESP-Dashboard/
 rm php/src/settings.json
 rm php/src/accsess.php
 cp ../temp/settings.json php/src/
