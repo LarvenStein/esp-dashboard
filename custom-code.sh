@@ -10,7 +10,7 @@ case $yn in
 		exit 1;;
 esac
 
-read -p "füge den link zu deiner .git repository ein" repo
+read -p "füge den link zu deiner .git repository ein (mit http://)" repo
 echo "$PWD"
 mkdir ../temp/
 cp php/src/settings.json ../temp/
