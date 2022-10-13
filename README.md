@@ -9,7 +9,7 @@
 
 Bei problemen bei erstellen von geräten, `chmod 777 php/src/settings.json` ausführen.
 
-Standardport: *8080*
+Standardport: *8004*
 
 
 ## Instalation ohne Docker
