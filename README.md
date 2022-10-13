@@ -1,6 +1,6 @@
 ## Instalation via Docker
 
-1. `git clone https://git.gartenbauzentrale.de/GartenbauzentraleEG/ESP-Dashboard.git`
+1. `git clone https://github.com/LarvenStein/esp-dashboard.git`
 2. `cd esp-dashboard/`
 3. `nano php/src/accsess.php` und dort Zuganngsdaten bearbeiten
 4. `docker-compose up (-d)`
