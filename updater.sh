@@ -16,12 +16,7 @@ cp php/src/accsess.php ../temp/
 cd ../
 rm -r ESP-Dashboard/
 
-read -p "Woher möchtest du das Update beziehen? (github/gbz) " ghgbz 
-
-case $ghgbz in 
-    github ) git clone https://github.com/LarvenStein/esp-dashboard.git ESP-Dashboard/;;
-    gbz ) git clone http://136.64.200.127:3000/GartenbauzentraleEG/ESP-Dashboard.git ESP-Dashboard/;;
-    * ) echo "ungültige Antwort";;
+git clone https://github.com/LarvenStein/esp-dashboard.git ESP-Dashboard/
 
 rm ESP-Dashboard/php/src/settings.json
 rm ESP-Dashboard/php/src/accsess.php
