@@ -168,12 +168,7 @@ label {
 .device p {
     font-size: larger;
 }
-/*
-.devicebody {
-    width: 100vw;
-    height: calc(100vh - 285px);
-}
-*/
+
 .allcenter {
     display: grid;
     place-items: center;
