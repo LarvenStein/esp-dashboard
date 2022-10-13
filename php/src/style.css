@@ -121,6 +121,10 @@ button {
     transition: 1s all;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .center {
     display: flex;
     justify-content: center;
