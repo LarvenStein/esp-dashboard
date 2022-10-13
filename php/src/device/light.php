@@ -44,7 +44,7 @@ echo '
     <main class="devicebody allcenter">
         <?php
             $device_data = json_decode(file_get_contents('../settings.json'));
-            $device = $device_data[$_GET['device']];
+            $device = $device_data->{$_GET['device']};
 
             // Prüfe, ob das angeforderte Gerät ein licht ist
             if($device->Type == 'light') {

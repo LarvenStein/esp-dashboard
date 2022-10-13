@@ -22,7 +22,7 @@ header('Content-Type: application/json; charset=utf-8');
 // Hole aktuelle Liste an Geräten
 $device_data = json_decode(file_get_contents('settings.json'));
 //Suche gerät aus der Liste
-$device = $device_data[$_GET['device']];
+$device = $device_data->{$_GET['device']};
 
 
 if(strlen($_GET['action'] > 0)) {

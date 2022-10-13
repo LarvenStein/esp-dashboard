@@ -16,7 +16,7 @@ cp php/src/settings.json ../temp/
 cp php/src/accsess.php ../temp/
 
 cd ../
-rm -r ESP-Dashboard/ -y
+rm -r ESP-Dashboard/
 git clone $repo ESP-Dashboard/
 rm ESP-Dashboard/php/src/settings.json
 rm ESP-Dashboard/php/src/accsess.php

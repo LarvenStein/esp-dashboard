@@ -40,7 +40,7 @@ error_reporting(0);
     <main class="devicebody allcenter">
         <?php
             $device_data = json_decode(file_get_contents('../settings.json'));
-            $device = $device_data[$_GET['device']];
+            $device = $device_data->{$_GET['device']};
 
             if($device->Type == 'gate') {
                 // Das heir funktioniert gleich wie light.php: nur ohne die lich an/aus sache
