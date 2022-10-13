@@ -1,9 +1,9 @@
 {
-    "2": {
-        "Name": "hdf\u00f6ds",
-        "IP": "943409",
-        "Type": "light",
-        "Password": "OTMyMA==",
-        "RelayId": "2"
+    "3": {
+        "Name": "loeschmichwenndueinneuesgeraethast",
+        "IP": "1.0.0.1",
+        "Type": "gate",
+        "Password": "pw",
+        "RelayId": "1"
     }
 }
