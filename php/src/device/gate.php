@@ -49,7 +49,7 @@ error_reporting(0);
                 <div class="allcenter devicepanel">
                 <div>
                     <h1>'.$device->Name.'</h1>
-                    <button onclick="togglegate(&#39;'.$_GET['device'].'&#39;)" id="gatebox">AUF</button>
+                    <button onclick="togglegate(&#39;'.$_GET['device'].'&#39;)" id="gatebox">Öffnen</button>
                     <p id="status" class="hidden"></p>
                 </div>
                 </div>

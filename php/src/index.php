@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
     <title>GBZ</title>
+    <script src="device/opengate.js" defer></script>
 </head>
 <body>
     <?php
@@ -57,11 +58,14 @@
             // Für jedes Gerätauf der Liste, zeige das an
             foreach($devices as $index=>$device) {
                 echo '
-                <a class="device" href="device/'.$device->Type.'.php?device='.$index.'">
+                <div class="device">
+                <a href="device/'.$device->Type.'.php?device='.$index.'" class="cwhite">
                     '. file_get_contents('media/'.$device->Type.'.svg').'<br>
                     <b>'.$device->Name.'</b>
                     <p>'.$device->Type.'</p>
-                </a>
+                    </a>
+                    <button id="gatebox" class="" onclick="togglegate(&#39;'.$index.'&#39;)">Toggle</button> <!--Wenn der Butten angeklickt wird, führe diese JS funktion aus-->
+                </div>
                 ';
             }
         ?>

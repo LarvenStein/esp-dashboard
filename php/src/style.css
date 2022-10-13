@@ -261,6 +261,10 @@ label {
     }
 }
 
+.cwhite {
+    color: var(--white);
+}
+
 ::selection {
     background-color: var(--red);
 }
