@@ -86,8 +86,9 @@
                         </div>
                     </div>
                     ';
+                    $current_Devices_obj = (object)$current_Devices;
                     //Lösche das gerät aus dem Array
-                    unset($current_Devices->{$_POST['device2delete']});
+                    unset($current_Devices_obj->{$_POST['device2delete']});
                     //und speichere die Änderungen
                     file_put_contents('../settings.json', json_encode($current_Devices, JSON_PRETTY_PRINT));
 
@@ -146,6 +147,7 @@
                         <br><br>
                         <button type="submit">Gerät Löschen</button>
                     </form>
+                    
                 </div>
                 
                 
