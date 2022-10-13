@@ -23,14 +23,6 @@ function togglegate(vv) {
     
         } else {
             // Wenn die Anfrage funktionuert hat, führe ✨Animationen✨ aus
-
-            document.getElementById('gatebox').classList.add('sucsess');
-    
-            setTimeout(rmsucsess, 4000);
-        
-            function rmsucsess() {
-                document.getElementById('gatebox').classList.remove('sucsess');
-            }
         
             if(document.getElementById('main').classList.contains('light')) {
                 document.getElementById('main').classList.remove('light');
@@ -40,8 +32,15 @@ function togglegate(vv) {
                 document.getElementById('btn').classList.add('light');
             }
         }
-
     };
+    document.getElementById('gatebox').classList.add('sucsess');
+    
+    setTimeout(rmsucsess, 4000);
+
+    function rmsucsess() {
+        document.getElementById('gatebox').classList.remove('sucsess');
+    }
+
 }
 
 // Hier wird eine Prüfungsanfrage gesendet um zu sehen ob ein licht an ist
