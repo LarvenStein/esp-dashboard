@@ -23,4 +23,6 @@ rm ESP-Dashboard/php/src/accsess.php
 cp temp/settings.json ESP-Dashboard/php/src/
 cp temp/accsess.php ESP-Dashboard/php/src/
 
+chmod 777 ESP-Dashboard/php/src/settings.json
+
 echo "Fertig"
