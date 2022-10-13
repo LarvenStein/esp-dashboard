@@ -61,7 +61,7 @@
                 <div class="device">
                 <a href="device/'.$device->Type.'.php?device='.$index.'" class="cwhite">
                     '. file_get_contents('media/'.$device->Type.'.svg').'<br>
-                    <b>'.$device->Name.'</b>
+                    <p><b>'.$device->Name.'</b></p>
                     </a>
                     <button class="" onclick="togglegate(&#39;'.$index.'&#39;)">Toggle</button> <!--Wenn der Butten angeklickt wird, führe diese JS funktion aus-->
                 </div>
